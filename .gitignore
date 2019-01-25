@@ -1,0 +1,13 @@
+1-data-lab/*
+!1-data-lab/bits.c
+2-bomb-lab/*
+!2-bomb-lab/solution.txt
+3-attack-lab/*
+!3-attack-lab/find-gadgets.sh
+!3-attack-lab/phase*
+4-architecture-lab/*
+!4-architecture-lab/sum.ys
+!4-architecture-lab/rsum.ys
+!4-architecture-lab/copy.ys
+!4-architecture-lab/seq-full.hcl
+*.pdf
